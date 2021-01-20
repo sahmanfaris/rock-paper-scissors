@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function computerPlay() {
+        const rand = Math.floor(Math.random() * 3);
+        return ["Rock", "Paper", "Scissors"][rand];
+      }
+      function playRound(playerSelection, computerPlay) {
+        const player = playerSelection.toLowerCase();
+        const computer = computerPlay().toLowerCase();
+
+        if (player === "rock" && computer === "paper")
+          return "You Lose! Paper beats Rock";
+        if (player === "rock" && computer === "scissors")
+          return "You Won! Rock beats Scissors";
+        if (player === "paper" && computer === "rock")
+          return "You Won! Paper beats Rock";
+        if (player === "paper" && computer === "scissors")
+          return "You Lose! Scissors beats Paper";
+        if (player === "scisorrs" && computer === "rock")
+          return "You Lose! Rock beats Scissors";
+        if (player === "scisorrs" && computer === "paper")
+          return "You Won! Scissors beats Paper";
+        if (player === computer) return "Tied";
+      }
+
+      function game() {
+        let score = 0;
+        if (playRound(playerSelection, computerPlay).includes("Won")) score++;
+        else if (playRound(playerSelection, computerPlay).includes("Lose"))
+          score--;
+        if (playRound(playerSelection, computerPlay).includes("Won")) score++;
+        else if (playRound(playerSelection, computerPlay).includes("Lose"))
+          score--;
+        if (playRound(playerSelection, computerPlay).includes("Won")) score++;
+        else if (playRound(playerSelection, computerPlay).includes("Lose"))
+          score--;
+        if (playRound(playerSelection, computerPlay).includes("Won")) score++;
+        else if (playRound(playerSelection, computerPlay).includes("Lose"))
+          score--;
+        if (playRound(playerSelection, computerPlay).includes("Won")) score++;
+        else if (playRound(playerSelection, computerPlay).includes("Lose"))
+          score--;
+        if (score > 0) return "You win overal";
+        if (score < 0) return "You lose overal";
+        if (score === 0) return "Tied overal";
+      }
+
+      const playerSelection = "rock";
+
+      //console.log(playerSelection, computerSelection);
+      //console.log(playRound(playerSelection, computerSelection));
+      console.log(game());
+    </script>
+  </body>
+</html>
